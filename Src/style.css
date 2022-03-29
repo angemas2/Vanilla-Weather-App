@@ -1,0 +1,41 @@
+#bgimg {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.container {
+  position: relative;
+  color: white;
+  padding: 100px;
+}
+
+#user-city {
+  margin-top: 30px;
+  color: #2a283b;
+  opacity: 30%;
+  width: 50%;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+}
+
+.date {
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.details {
+  list-style: none;
+  text-align: left;
+  padding: 0px;
+  margin-top: 30%;
+  font-size: 12px;
+}
+
+.city,
+.emoji,
+.currentTemp {
+  font-size: 50px;
+  font-weight: bold;
+}
