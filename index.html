@@ -13,29 +13,33 @@
     />
     <title>Document</title>
   </head>
-  <img id="bgimg" src="Medias/luke-chesser-pJadQetzTkI-unsplash.jpg" />
+  <img id="bgimg" src="Medias/photo-1500390365106-166bb67248d6.avif" />
   <div class="container">
     <body>
       <h1>Real Time Weather </h1>
       <div class="date">Monday,29th 00:45 </div>
         <form id="search-city">
           <input id="user-city" value="Search City" />
+          <input id="submit-city" type="submit" value="Search" class="btn btn-light"/>
         </form>
-        <ul class="details">
+        <div class="details">
+        <ul class="list">
           <li>Precipitations : 2%</li>
           <li>Humidity : 15%</li>
           <li>Wind : 15km/h</li>
         </ul>
         <div class="row">
-          <div class="col-5 city">
+          <div class="col-md-4 city">
             Singapore
           </br> 
           18°
+          <span id="description"> Cloudy </span>
           </div>
-          <div class="col-7 emoji">
-            ☀
+          <div class="col-md-8 emoji">
+            <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="partly_cloudy">
           </div>
         
+        </div>
         </div>
       </div>
 
