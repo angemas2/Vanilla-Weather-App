@@ -11,7 +11,11 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <title>Document</title>
+    <title>Weather App</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   </head>
   <img id="bgimg" src="Medias/photo-1500390365106-166bb67248d6.avif" />
   <div class="container">
@@ -24,19 +28,20 @@
         </form>
         <div class="details">
         <ul class="list">
-          <li>Precipitations : 2%</li>
-          <li>Humidity : 15%</li>
-          <li>Wind : 15km/h</li>
+          <li>Feels like : <span id="feels-like"></span>°</li>
+          <li>Humidity : <span id="humidity"></span>%</li>
+          <li>Wind : <span id="wind-speed"></span> m/s</li>
         </ul>
         <div class="row">
           <div class="col city">
-            Singapore
+            <span id="current-city"></span>
           </br> 
-          18<span id="units">°C | °F</span>
-          <span id="description"> Cloudy </span>
+          <span id="current-temp"></span>
+          <span id="units">°C | °F</span>
+          <span id="description"></span>
           </div>
           <div class="col-sm-8 emoji">
-            <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="partly_cloudy">
+            <img id="current-emoji" src="" alt="partly_cloudy">
           </div>
         
         </div>
