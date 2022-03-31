@@ -36,7 +36,8 @@
 }
 
 .details {
-  margin-top: 15%;
+  margin-top: 10%;
+  margin-bottom: 20px;
   font-size: 12px;
   text-align: left;
   background: #436c7e;
@@ -44,7 +45,9 @@
   padding: 30px;
   border-radius: 30px;
   max-width: 950px;
+  padding-top: 40px;
 }
+
 .city,
 .currentTemp {
   font-size: 50px;
@@ -87,5 +90,27 @@
   position: relative;
   top: -25px;
   font-weight: 300;
+  margin-left: 5px;
+}
+
+#units a {
+  color: white;
+}
+
+.active {
+  text-decoration: none;
+  cursor: default;
+  font-weight: bold;
+}
+
+.footer {
+  font-weight: bold;
+  font-size: 12px;
+  position: relative;
+  left: 25px;
+}
+
+#github {
+  color: white;
   margin-left: 5px;
 }

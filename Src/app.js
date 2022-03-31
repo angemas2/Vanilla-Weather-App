@@ -31,6 +31,8 @@ function showTemp(response) {
   let windSpeed = document.querySelector("#wind-speed");
   let date = document.querySelector("#lastdate");
 
+  celsiusTemp = response.data.main.temp;
+
   city.innerHTML = response.data.name;
   currentTemp.innerHTML = Math.round(response.data.main.temp);
   description.innerHTML = response.data.weather[0].description;
@@ -59,7 +61,35 @@ function usersearch(event) {
   search(usercity);
 }
 
-search("Singapore");
+function showcelsiusTemp(event) {
+  event.preventDefault();
+  let temp = document.querySelector("#current-temp");
+  let celsius = document.querySelector("#celsius");
+  let fahrenheit = document.querySelector("#fahrenheit");
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+  temp.innerHTML = Math.round(celsiusTemp);
+}
+
+function showfahrenheitTemp(event) {
+  event.preventDefault();
+  let temp = document.querySelector("#current-temp");
+  let fahrenheit = document.querySelector("#fahrenheit");
+  let celsius = document.querySelector("#celsius");
+  fahrenheit.classList.add("active");
+  celsius.classList.remove("active");
+  temp.innerHTML = Math.round((celsiusTemp * 9) / 5 + 32);
+}
+
+let celsiusTemp = null;
 
 let submit = document.querySelector("#search-city");
 submit.addEventListener("submit", usersearch);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", showcelsiusTemp);
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", showfahrenheitTemp);
+
+search("Singapore");
