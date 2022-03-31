@@ -21,9 +21,9 @@
   <div class="container">
     <body>
       <h1>Real Time Weather </h1>
-      <div class="date">Monday,29th 00:45 </div>
+      <div class="date"> Last updated : <span id="lastdate"></span></div>
         <form id="search-city">
-          <input id="user-city" value="Search City" />
+          <input type="search" id="user-city" placeholder="Search City" autocomplete="off" />
           <input id="submit-city" type="submit" value="Search" class="btn btn-light"/>
         </form>
         <div class="details">
@@ -40,8 +40,8 @@
           <span id="units">°C | °F</span>
           <span id="description"></span>
           </div>
-          <div class="col-sm-8 emoji">
-            <img id="current-emoji" src="" alt="partly_cloudy">
+          <div class="col-sm-7 emoji">
+            <img id="current-emoji" src="" alt="">
           </div>
         
         </div>
