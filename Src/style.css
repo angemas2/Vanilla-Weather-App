@@ -15,16 +15,6 @@
   font-weight: 700;
 }
 
-#user-city {
-  margin-top: 30px;
-  color: #2a283b;
-  opacity: 30%;
-  width: 50%;
-  padding: 10px;
-  border-radius: 20px;
-  border: none;
-}
-
 .date {
   font-size: 18px;
   font-weight: 300;
@@ -36,16 +26,15 @@
 }
 
 .details {
-  margin-top: 10%;
+  margin-top: 5%;
   margin-bottom: 20px;
   font-size: 12px;
   text-align: left;
   background: #436c7e;
   opacity: 70%;
-  padding: 40px 30px 0px 30px;
+  padding: 40px 30px 20px 30px;
   border-radius: 30px;
   max-width: 950px;
-  max-height: 400px;
 }
 
 .city,
@@ -55,17 +44,56 @@
   line-height: 60px;
 }
 
-#description {
-  font-size: 14px;
-  font-weight: lighter;
-  text-transform: capitalize;
-}
-
 .emoji {
   padding: 0;
   width: 100%;
   position: relative;
-  top: -30px;
+  top: -20px;
+}
+
+.active {
+  text-decoration: none;
+  cursor: default;
+  font-weight: bold;
+}
+
+.footer {
+  font-weight: bold;
+  font-size: 12px;
+  position: relative;
+  left: 22px;
+}
+
+.mintemp {
+  opacity: 40%;
+}
+
+.maxtemp {
+  font-weight: bold;
+}
+
+.weatherforecast {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+#github {
+  color: white;
+  margin-left: 5px;
+}
+
+#units a {
+  color: white;
+}
+
+#units {
+  font-size: 12px;
+  position: relative;
+  top: -25px;
+  font-weight: 300;
+  margin-left: 5px;
 }
 
 #submit-city {
@@ -85,32 +113,22 @@
   background: #a96d58;
 }
 
-#units {
-  font-size: 12px;
-  position: relative;
-  top: -25px;
-  font-weight: 300;
-  margin-left: 5px;
+#description {
+  font-size: 14px;
+  font-weight: lighter;
+  text-transform: capitalize;
 }
 
-#units a {
-  color: white;
+#user-city {
+  margin-top: 30px;
+  color: #2a283b;
+  opacity: 30%;
+  width: 50%;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
 }
 
-.active {
-  text-decoration: none;
-  cursor: default;
-  font-weight: bold;
-}
-
-.footer {
-  font-weight: bold;
-  font-size: 12px;
-  position: relative;
-  left: 25px;
-}
-
-#github {
-  color: white;
-  margin-left: 5px;
+#day1 {
+  opacity: 60%;
 }

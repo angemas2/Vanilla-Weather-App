@@ -22,6 +22,20 @@ function formatdate(timestamp) {
   return fulldate;
 }
 
+function formatForecastDay(timestamp) {
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  return days[day];
+}
+
+function getForecast(coordinates) {
+  let apiKey = "c0ed04c902a245721bb289e92dca75fe";
+  let units = "metric";
+  let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+  axios.get(url).then(displayForecast);
+}
+
 function showTemp(response) {
   let city = document.querySelector("#current-city");
   let currentTemp = document.querySelector("#current-temp");
@@ -45,6 +59,8 @@ function showTemp(response) {
   document.getElementById("current-emoji").alt =
     response.data.weather[0].description;
   date.innerHTML = formatdate(response.data.dt * 1000);
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -79,6 +95,32 @@ function showfahrenheitTemp(event) {
   fahrenheit.classList.add("active");
   celsius.classList.remove("active");
   temp.innerHTML = Math.round((celsiusTemp * 9) / 5 + 32);
+}
+
+function displayForecast(response) {
+  let forecast = document.querySelector("#forecast");
+  let forecastdays = response.data.daily;
+  let forecastHTML = `<div class="row">`;
+
+  forecastdays.forEach(function (forecastday, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+           <div id="day1"> ${formatForecastDay(
+             forecastday.dt
+           )}</div> <div> <img src="http://openweathermap.org/img/wn/${
+          forecastday.weather[0].icon
+        }@2x.png" width="60px"></div> <span class="maxtemp">${Math.round(
+          forecastday.temp.max
+        )}°</span> <span class="mintemp">${Math.round(
+          forecastday.temp.min
+        )}°</span>
+          </div>`;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
 }
 
 let celsiusTemp = null;
