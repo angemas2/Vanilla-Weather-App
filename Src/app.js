@@ -138,6 +138,7 @@ function position(position) {
 function locationTemp(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(position);
+  document.getElementById("user-city").value = "";
 }
 
 let celsiusTemp = null;
