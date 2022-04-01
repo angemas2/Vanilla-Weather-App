@@ -60,6 +60,9 @@ function showTemp(response) {
     response.data.weather[0].description;
   date.innerHTML = formatdate(response.data.dt * 1000);
 
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+
   getForecast(response.data.coord);
 }
 
