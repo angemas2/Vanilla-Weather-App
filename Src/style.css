@@ -132,3 +132,17 @@
 #day1 {
   opacity: 60%;
 }
+
+#geoloc {
+  border: none;
+  border-radius: 100%;
+  padding: 10px 15px;
+  color: white;
+  background: #4b8295;
+  margin-left: 8px;
+}
+
+#geoloc:hover {
+  color: #4b8295;
+  background: white;
+}

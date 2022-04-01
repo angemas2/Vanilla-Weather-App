@@ -126,6 +126,20 @@ function displayForecast(response) {
   forecast.innerHTML = forecastHTML;
 }
 
+function position(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let units = "metric";
+  let apiKey = "c0ed04c902a245721bb289e92dca75fe";
+  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
+  axios.get(url).then(showTemp);
+}
+
+function locationTemp(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(position);
+}
+
 let celsiusTemp = null;
 
 let submit = document.querySelector("#search-city");
@@ -136,5 +150,8 @@ celsiusLink.addEventListener("click", showcelsiusTemp);
 
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", showfahrenheitTemp);
+
+let geoloc = document.querySelector("#geoloc");
+geoloc.addEventListener("click", locationTemp);
 
 search("Singapore");
